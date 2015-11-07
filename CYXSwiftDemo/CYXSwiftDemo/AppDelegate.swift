@@ -15,7 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        // 设置图片不渲染
+        UITabBar.appearance().tintColor = UIColor.orangeColor()
+        // 1.创建window
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        // 2.设置根控制器
+        window?.rootViewController = MainViewController()
+        // 3.显示window
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -42,5 +51,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+/**
+ 自定义LOG的目的
+ 在开发阶段自动显示LOG
+ 在发布阶段自动屏蔽LOG
+ 
+ print(__FUNCTION__)  // 打印所在的方法
+ print(__LINE__)     // 打印所在的行
+ print(__FILE__)     // 打印所在文件的路径
+ */
+func CYXLog<T>(message : T, method :String = __FUNCTION__, line : Int = __LINE__){
+
+    #if DEBUG
+    print("\(method)[\(line)]:\(message)")
+    #endif
+    
 }
 

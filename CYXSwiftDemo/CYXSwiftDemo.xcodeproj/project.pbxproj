@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F377C831BEDEE4500B1C028 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C821BEDEE4500B1C028 /* MainViewController.swift */; };
+		8F377C851BEDEE6000B1C028 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C841BEDEE6000B1C028 /* DiscoverTableViewController.swift */; };
+		8F377C871BEDEE6F00B1C028 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C861BEDEE6F00B1C028 /* MessageTableViewController.swift */; };
+		8F377C891BEDEE8A00B1C028 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C881BEDEE8A00B1C028 /* ProfileTableViewController.swift */; };
+		8F377C8B1BEDEEC600B1C028 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C8A1BEDEEC600B1C028 /* HomeTableViewController.swift */; };
 		8F9636061BEC801900616DA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9636051BEC801900616DA2 /* AppDelegate.swift */; };
-		8F9636081BEC801900616DA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9636071BEC801900616DA2 /* ViewController.swift */; };
-		8F96360B1BEC801900616DA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F9636091BEC801900616DA2 /* Main.storyboard */; };
 		8F96360D1BEC801900616DA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F96360C1BEC801900616DA2 /* Assets.xcassets */; };
 		8F9636101BEC801900616DA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F96360E1BEC801900616DA2 /* LaunchScreen.storyboard */; };
 		8F96361B1BEC801900616DA2 /* CYXSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F96361A1BEC801900616DA2 /* CYXSwiftDemoTests.swift */; };
@@ -34,10 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F377C821BEDEE4500B1C028 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8F377C841BEDEE6000B1C028 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
+		8F377C861BEDEE6F00B1C028 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		8F377C881BEDEE8A00B1C028 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		8F377C8A1BEDEEC600B1C028 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		8F9636021BEC801900616DA2 /* CYXSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYXSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F9636051BEC801900616DA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8F9636071BEC801900616DA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8F96360A1BEC801900616DA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F96360C1BEC801900616DA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F96360F1BEC801900616DA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F9636111BEC801900616DA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +80,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F377C7B1BEDEDFB00B1C028 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8F377C7E1BEDEDFB00B1C028 /* Main */,
+				8F377C7D1BEDEDFB00B1C028 /* Home */,
+				8F377C7C1BEDEDFB00B1C028 /* Discover */,
+				8F377C7F1BEDEDFB00B1C028 /* Message */,
+				8F377C801BEDEDFB00B1C028 /* Profile */,
+				8F377C811BEDEDFB00B1C028 /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8F377C7C1BEDEDFB00B1C028 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				8F377C841BEDEE6000B1C028 /* DiscoverTableViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		8F377C7D1BEDEDFB00B1C028 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8F377C8A1BEDEEC600B1C028 /* HomeTableViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8F377C7E1BEDEDFB00B1C028 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8F377C821BEDEE4500B1C028 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8F377C7F1BEDEDFB00B1C028 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				8F377C861BEDEE6F00B1C028 /* MessageTableViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		8F377C801BEDEDFB00B1C028 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8F377C881BEDEE8A00B1C028 /* ProfileTableViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		8F377C811BEDEDFB00B1C028 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		8F9635F91BEC801900616DA2 = {
 			isa = PBXGroup;
 			children = (
@@ -97,9 +163,8 @@
 		8F9636041BEC801900616DA2 /* CYXSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8F377C7B1BEDEDFB00B1C028 /* Classes */,
 				8F9636051BEC801900616DA2 /* AppDelegate.swift */,
-				8F9636071BEC801900616DA2 /* ViewController.swift */,
-				8F9636091BEC801900616DA2 /* Main.storyboard */,
 				8F96360C1BEC801900616DA2 /* Assets.xcassets */,
 				8F96360E1BEC801900616DA2 /* LaunchScreen.storyboard */,
 				8F9636111BEC801900616DA2 /* Info.plist */,
@@ -231,7 +296,6 @@
 			files = (
 				8F9636101BEC801900616DA2 /* LaunchScreen.storyboard in Resources */,
 				8F96360D1BEC801900616DA2 /* Assets.xcassets in Resources */,
-				8F96360B1BEC801900616DA2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +320,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F9636081BEC801900616DA2 /* ViewController.swift in Sources */,
+				8F377C8B1BEDEEC600B1C028 /* HomeTableViewController.swift in Sources */,
 				8F9636061BEC801900616DA2 /* AppDelegate.swift in Sources */,
+				8F377C891BEDEE8A00B1C028 /* ProfileTableViewController.swift in Sources */,
+				8F377C851BEDEE6000B1C028 /* DiscoverTableViewController.swift in Sources */,
+				8F377C871BEDEE6F00B1C028 /* MessageTableViewController.swift in Sources */,
+				8F377C831BEDEE4500B1C028 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +361,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8F9636091BEC801900616DA2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8F96360A1BEC801900616DA2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8F96360E1BEC801900616DA2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -482,6 +542,7 @@
 				8F96362C1BEC801900616DA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F96362D1BEC801900616DA2 /* Build configuration list for PBXNativeTarget "CYXSwiftDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +551,7 @@
 				8F96362F1BEC801900616DA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F9636301BEC801900616DA2 /* Build configuration list for PBXNativeTarget "CYXSwiftDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +560,7 @@
 				8F9636321BEC801900616DA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
