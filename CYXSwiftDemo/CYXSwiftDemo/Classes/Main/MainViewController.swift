@@ -26,9 +26,9 @@ class MainViewController: UITabBarController {
 //        addChildViewController(nav)
         
         addChildViewController(HomeTableViewController(), imageName: "tabbar_home", title: "首页")
-        addChildViewController(MessageTableViewController(), imageName: "tabbar_message_center", title: "消息")
-        addChildViewController(DiscoverTableViewController(), imageName: "tabbar_discover", title: "广场")
-        addChildViewController(ProfileTableViewController(), imageName: "tabbar_profile", title: "我")
+        addChildViewController(MessageTableViewController(), imageName: "tabbar_category", title: "分类")
+        addChildViewController(DiscoverTableViewController(), imageName: "tabbar_shoppingcart", title: "购物车")
+        addChildViewController(ProfileTableViewController(), imageName: "tabbar_mine", title: "个人中心")
     }
 
 

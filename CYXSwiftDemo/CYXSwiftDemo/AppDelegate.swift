@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        // 设置图片不渲染
-        UITabBar.appearance().tintColor = UIColor.orangeColor()
+        // 设置图片
+        UITabBar.appearance().tintColor = UIColor.blackColor()
         // 1.创建window
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // 2.设置根控制器

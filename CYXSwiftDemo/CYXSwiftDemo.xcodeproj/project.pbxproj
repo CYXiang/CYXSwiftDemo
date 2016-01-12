@@ -14,7 +14,6 @@
 		8F377C8B1BEDEEC600B1C028 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C8A1BEDEEC600B1C028 /* HomeTableViewController.swift */; };
 		8F9636061BEC801900616DA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9636051BEC801900616DA2 /* AppDelegate.swift */; };
 		8F96360D1BEC801900616DA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F96360C1BEC801900616DA2 /* Assets.xcassets */; };
-		8F9636101BEC801900616DA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F96360E1BEC801900616DA2 /* LaunchScreen.storyboard */; };
 		8F96361B1BEC801900616DA2 /* CYXSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F96361A1BEC801900616DA2 /* CYXSwiftDemoTests.swift */; };
 		8F9636261BEC801900616DA2 /* CYXSwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9636251BEC801900616DA2 /* CYXSwiftDemoUITests.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +44,6 @@
 		8F9636021BEC801900616DA2 /* CYXSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYXSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F9636051BEC801900616DA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F96360C1BEC801900616DA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8F96360F1BEC801900616DA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F9636111BEC801900616DA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F9636161BEC801900616DA2 /* CYXSwiftDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CYXSwiftDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F96361A1BEC801900616DA2 /* CYXSwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYXSwiftDemoTests.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 				8F377C7B1BEDEDFB00B1C028 /* Classes */,
 				8F9636051BEC801900616DA2 /* AppDelegate.swift */,
 				8F96360C1BEC801900616DA2 /* Assets.xcassets */,
-				8F96360E1BEC801900616DA2 /* LaunchScreen.storyboard */,
 				8F9636111BEC801900616DA2 /* Info.plist */,
 			);
 			path = CYXSwiftDemo;
@@ -294,7 +291,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F9636101BEC801900616DA2 /* LaunchScreen.storyboard in Resources */,
 				8F96360D1BEC801900616DA2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,17 +355,6 @@
 			targetProxy = 8F9636221BEC801900616DA2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8F96360E1BEC801900616DA2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8F96360F1BEC801900616DA2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8F9636281BEC801900616DA2 /* Debug */ = {
