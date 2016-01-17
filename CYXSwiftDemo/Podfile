@@ -1,4 +1,5 @@
 platform :ios, "9.0"
+use_frameworks!
 
 pod "AFNetworking"
-
+pod 'RAMAnimatedTabBarController', '~> 1.0.6'
