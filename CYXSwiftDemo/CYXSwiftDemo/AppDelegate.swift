@@ -12,46 +12,126 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var adViewController: ADViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        // 设置图片
-        UITabBar.appearance().tintColor = UIColor.blackColor()
-        // 1.创建window
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        // 2.设置根控制器
-        window?.rootViewController = MainViewController()
-        // 3.显示window
-        window?.makeKeyAndVisible()
+        setAppSubject()
+        
+        addNotification()
+        
+        buildKeyWindow()
         
         return true
     }
-
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    // 析构函数
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func addNotification() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.showMainTabbarControllerSucess(_:)), name: ADImageLoadSecussed, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.showMainTabbarControllerFale), name: ADImageLoadFail, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.shoMainTabBarController), name: GuideViewControllerDidFinish, object: nil)
+    }
+    
+    // MARK: - Action
+    func showMainTabbarControllerSucess(noti: NSNotification) {
+        let adImage = noti.object as! UIImage
+        let mainTabBar = MainViewController()
+        mainTabBar.adImage = adImage
+        window?.rootViewController = mainTabBar
+    }
+    
+    func showMainTabbarControllerFale() {
+        window!.rootViewController = MainViewController()
+    }
+    
+    func shoMainTabBarController() {
+        window!.rootViewController = MainViewController()
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
 
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    // MARK: - privete Method
+    // 初始化窗口
+    private func buildKeyWindow(){
+    
+//        // 设置图片
+//        UITabBar.appearance().tintColor = UIColor.blackColor()
+//        
+//        // 1.创建window
+//        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        // 2.设置根控制器
+//        window?.rootViewController = MainViewController()
+//        // 3.显示window
+//        window?.makeKeyAndVisible()
+        
+        window = UIWindow(frame: ScreenBounds)
+        window!.makeKeyAndVisible()
+        
+        if isNewVersion() {
+            window?.rootViewController = GuideViewController()
+            NSUserDefaults.standardUserDefaults().setObject("isFristOpenApp", forKey: "isFristOpenApp")
+        }else{
+            loadADRootViewController()
+        }
+        
     }
-
-    func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    func loadADRootViewController() {
+        adViewController = ADViewController()
+        
+        weak var tmpSelf = self
+        MainAD.loadADData { (data, error) in
+            if data?.data?.img_name != nil {
+                tmpSelf!.adViewController!.imageName = data!.data!.img_name
+                tmpSelf!.window?.rootViewController = self.adViewController
+            }
+        }
     }
+    
+    // MARK: 主题设置
+    private func setAppSubject() {
+        UITabBar.appearance().tintColor = UIColor.blackColor()
 
-    func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        let tabBarAppearance = UITabBar .appearance()
+        tabBarAppearance.backgroundColor = UIColor.whiteColor()
+        
+        let navBarnAppearance = UINavigationBar.appearance()
+        navBarnAppearance.translucent = false
     }
-
+    
+    // MARK: 检测新版本
+    private func isNewVersion() -> Bool
+    {
+        // 1.从info.plist中获取当前软件的版本号
+        let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        
+        // 2.从沙盒中获取以前的软件版本号
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let sanboxVersion = (userDefaults.objectForKey("CFBundleShortVersionString") as? String) ?? "0.0"
+        
+        // 3.利用"当前的"和"沙盒的"进行比较
+        // 如果当前的 > 沙盒的, 有新版本
+        // 1.0 0.0
+        if currentVersion.compare(sanboxVersion) == NSComparisonResult.OrderedDescending
+        {
+            // 有新版本
+            // 4.存储当前的软件版本号到沙盒中
+            userDefaults.setObject(currentVersion, forKey: "CFBundleShortVersionString")
+            userDefaults.synchronize() // iOS7以前需要这样做, iOS7以后不需要了
+            return true
+        }
+        
+        // 5.返回结果
+        return false
+        
+    }
 
 }
+
+
 /**
  自定义LOG的目的
  在开发阶段自动显示LOG

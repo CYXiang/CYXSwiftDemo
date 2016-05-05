@@ -9,7 +9,27 @@
 import UIKit
 
 class MainViewController: UITabBarController {
+    
+    private var fristLoadMainTabBarController: Bool = true
+    private var adImageView: UIImageView?
+    var adImage: UIImage? {
+        didSet {
+            weak var tmpSelf = self
+            adImageView = UIImageView(frame: ScreenBounds)
+            adImageView!.image = adImage!
+            self.view.addSubview(adImageView!)
+            
+            UIImageView.animateWithDuration(2.0, animations: { () -> Void in
+                tmpSelf!.adImageView!.transform = CGAffineTransformMakeScale(1.2, 1.2)
+                tmpSelf!.adImageView!.alpha = 0
+            }) { (finsch) -> Void in
+                tmpSelf!.adImageView!.removeFromSuperview()
+                tmpSelf!.adImageView = nil
+            }
+        }
+    }
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
