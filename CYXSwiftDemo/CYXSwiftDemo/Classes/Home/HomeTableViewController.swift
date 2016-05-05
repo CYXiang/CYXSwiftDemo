@@ -8,88 +8,129 @@
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
+class HomeTableViewController: UIViewController {
 
+    private var flag: Int = -1
+    private var collectionView: UICollectionView!
+    private var lastContentOffsetY: CGFloat = 0
+    private var isAnimation: Bool = false
+    private var freshHot: NSObject?
+
+    // MARK: Life circle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 8
+        layout.sectionInset = UIEdgeInsets(top: 0, left: HomeCollectionViewCellMargin, bottom: 0, right: HomeCollectionViewCellMargin)
+        layout.headerReferenceSize = CGSizeMake(0, HomeCollectionViewCellMargin)
+        
+        collectionView = UICollectionView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight - 64), collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = LFBGlobalBackgroundColor
+        collectionView.registerClass(HomeCell.self, forCellWithReuseIdentifier: "Cell")
+        view.addSubview(collectionView)
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.navigationBar.barTintColor = LFBNavigationYellowColor;
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
-    // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+
+}
+
+// MARK: - CollectionView data source
+
+extension HomeTableViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        
+        return 2
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 10
     }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! HomeCell
+        
+        if indexPath.section == 0 {
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        } else if indexPath.section == 1 {
 
-        // Configure the cell...
+            cell.addButtonClick = ({ (imageView) -> () in
 
+            })
+        }
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        var itemSize = CGSizeZero
+        if indexPath.section == 0 {
+            itemSize = CGSizeMake(ScreenWidth - HomeCollectionViewCellMargin * 2, 140)
+        } else if indexPath.section == 1 {
+            itemSize = CGSizeMake((ScreenWidth - HomeCollectionViewCellMargin * 2) * 0.5 - 4, 250)
+        }
+        
+        return itemSize
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func collectionView(collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, atIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 1 && freshHot != nil && isAnimation {
+            startAnimation(view, offsetY: 60, duration: 0.8)
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    
+    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 1) {
+            return
+        }
+        
+        if isAnimation {
+            startAnimation(cell, offsetY: 80, duration: 1.0)
+        }
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    private func startAnimation(view: UIView, offsetY: CGFloat, duration: NSTimeInterval) {
+        
+        view.transform = CGAffineTransformMakeTranslation(0, offsetY)
+        
+        UIView.animateWithDuration(duration, animations: { () -> Void in
+            view.transform = CGAffineTransformIdentity
+        })
     }
-    */
+    
+    // MARK: - ScrollViewDelegate
+    func scrollViewDidScroll(scrollView: UIScrollView) {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        
+        if scrollView.contentOffset.y <= scrollView.contentSize.height {
+            isAnimation = lastContentOffsetY < scrollView.contentOffset.y
+            lastContentOffsetY = scrollView.contentOffset.y
+        }
     }
-    */
 
+
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            CYXLog("点击了第一组")
+        } else {
+            CYXLog("点击了第二组")
+        }
+    }
 }

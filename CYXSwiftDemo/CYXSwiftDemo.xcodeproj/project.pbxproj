@@ -56,6 +56,8 @@
 		49C0A3181CDB2F4B00409215 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A3171CDB2F4B00409215 /* BaseViewController.swift */; };
 		49C0A31A1CDB2F7000409215 /* GuideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A3191CDB2F7000409215 /* GuideCell.swift */; };
 		49C0A31C1CDB319900409215 /* AD in Resources */ = {isa = PBXBuildFile; fileRef = 49C0A31B1CDB319900409215 /* AD */; };
+		49C0A3221CDB533B00409215 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A3211CDB533B00409215 /* HomeCell.swift */; };
+		49C0A3241CDB535100409215 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C0A3231CDB535100409215 /* HomeCell.xib */; };
 		8F377C831BEDEE4500B1C028 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C821BEDEE4500B1C028 /* MainViewController.swift */; };
 		8F377C851BEDEE6000B1C028 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C841BEDEE6000B1C028 /* DiscoverTableViewController.swift */; };
 		8F377C871BEDEE6F00B1C028 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C861BEDEE6F00B1C028 /* MessageTableViewController.swift */; };
@@ -172,6 +174,8 @@
 		49C0A3171CDB2F4B00409215 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		49C0A3191CDB2F7000409215 /* GuideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideCell.swift; sourceTree = "<group>"; };
 		49C0A31B1CDB319900409215 /* AD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AD; sourceTree = "<group>"; };
+		49C0A3211CDB533B00409215 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		49C0A3231CDB535100409215 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		8F377C821BEDEE4500B1C028 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8F377C841BEDEE6000B1C028 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		8F377C861BEDEE6F00B1C028 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
@@ -461,6 +465,8 @@
 			isa = PBXGroup;
 			children = (
 				8F377C8A1BEDEEC600B1C028 /* HomeTableViewController.swift */,
+				49C0A3211CDB533B00409215 /* HomeCell.swift */,
+				49C0A3231CDB535100409215 /* HomeCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -654,6 +660,7 @@
 			files = (
 				49C0A2F11CDB1D7E00409215 /* MJRefresh.bundle in Resources */,
 				49C0A31C1CDB319900409215 /* AD in Resources */,
+				49C0A3241CDB535100409215 /* HomeCell.xib in Resources */,
 				8F96360D1BEC801900616DA2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,6 +768,7 @@
 				49C0A3021CDB1D7E00409215 /* UIImage+WebP.m in Sources */,
 				49C0A3011CDB1D7E00409215 /* UIImage+MultiFormat.m in Sources */,
 				49C0A30C1CDB1DAD00409215 /* UIImage + Extension.swift in Sources */,
+				49C0A3221CDB533B00409215 /* HomeCell.swift in Sources */,
 				49C0A28F1CDB15A100409215 /* Theme.swift in Sources */,
 				49C0A30B1CDB1DAD00409215 /* UIDevice + Extension.swift in Sources */,
 				8F377C831BEDEE4500B1C028 /* MainViewController.swift in Sources */,
