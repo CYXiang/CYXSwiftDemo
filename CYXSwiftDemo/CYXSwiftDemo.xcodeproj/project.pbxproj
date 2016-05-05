@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4922F8CA1CDB767A00B48977 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F8C91CDB767A00B48977 /* BaseNavigationController.swift */; };
+		4922F8CF1CDB76AA00B48977 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F8CB1CDB76AA00B48977 /* MainViewController.swift */; };
+		4922F8D01CDB76AA00B48977 /* AnimationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F8CC1CDB76AA00B48977 /* AnimationTabBarController.swift */; };
+		4922F8D11CDB76AA00B48977 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F8CD1CDB76AA00B48977 /* AnimationViewController.swift */; };
+		4922F8D21CDB76AA00B48977 /* ShopCarRedDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F8CE1CDB76AA00B48977 /* ShopCarRedDotView.swift */; };
 		49C0A2841CDB121200409215 /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A2831CDB121200409215 /* ADViewController.swift */; };
 		49C0A2871CDB12A600409215 /* MainAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A2861CDB12A600409215 /* MainAD.swift */; };
 		49C0A28C1CDB131000409215 /* SwiftDictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A28B1CDB131000409215 /* SwiftDictModel.swift */; };
@@ -58,7 +63,6 @@
 		49C0A31C1CDB319900409215 /* AD in Resources */ = {isa = PBXBuildFile; fileRef = 49C0A31B1CDB319900409215 /* AD */; };
 		49C0A3221CDB533B00409215 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A3211CDB533B00409215 /* HomeCell.swift */; };
 		49C0A3241CDB535100409215 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C0A3231CDB535100409215 /* HomeCell.xib */; };
-		8F377C831BEDEE4500B1C028 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C821BEDEE4500B1C028 /* MainViewController.swift */; };
 		8F377C851BEDEE6000B1C028 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C841BEDEE6000B1C028 /* DiscoverTableViewController.swift */; };
 		8F377C871BEDEE6F00B1C028 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C861BEDEE6F00B1C028 /* MessageTableViewController.swift */; };
 		8F377C891BEDEE8A00B1C028 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C881BEDEE8A00B1C028 /* ProfileTableViewController.swift */; };
@@ -88,6 +92,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4922F8C91CDB767A00B48977 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		4922F8CB1CDB76AA00B48977 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4922F8CC1CDB76AA00B48977 /* AnimationTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationTabBarController.swift; sourceTree = "<group>"; };
+		4922F8CD1CDB76AA00B48977 /* AnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		4922F8CE1CDB76AA00B48977 /* ShopCarRedDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCarRedDotView.swift; sourceTree = "<group>"; };
 		49C0A2831CDB121200409215 /* ADViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADViewController.swift; sourceTree = "<group>"; };
 		49C0A2861CDB12A600409215 /* MainAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAD.swift; sourceTree = "<group>"; };
 		49C0A28B1CDB131000409215 /* SwiftDictModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDictModel.swift; sourceTree = "<group>"; };
@@ -176,7 +185,6 @@
 		49C0A31B1CDB319900409215 /* AD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AD; sourceTree = "<group>"; };
 		49C0A3211CDB533B00409215 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		49C0A3231CDB535100409215 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
-		8F377C821BEDEE4500B1C028 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8F377C841BEDEE6000B1C028 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		8F377C861BEDEE6F00B1C028 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		8F377C881BEDEE8A00B1C028 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -417,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				49C0A3171CDB2F4B00409215 /* BaseViewController.swift */,
+				4922F8C91CDB767A00B48977 /* BaseNavigationController.swift */,
 				49C0A3131CDB25C200409215 /* UpImageDownTextButton.swift */,
 			);
 			name = Common;
@@ -477,7 +486,10 @@
 				49C0A3191CDB2F7000409215 /* GuideCell.swift */,
 				49C0A3151CDB2F1900409215 /* GuideViewController.swift */,
 				49C0A2821CDB11C700409215 /* AD */,
-				8F377C821BEDEE4500B1C028 /* MainViewController.swift */,
+				4922F8CB1CDB76AA00B48977 /* MainViewController.swift */,
+				4922F8CC1CDB76AA00B48977 /* AnimationTabBarController.swift */,
+				4922F8CD1CDB76AA00B48977 /* AnimationViewController.swift */,
+				4922F8CE1CDB76AA00B48977 /* ShopCarRedDotView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -736,6 +748,7 @@
 			files = (
 				49C0A2F31CDB1D7E00409215 /* UIScrollView+MJExtension.m in Sources */,
 				49C0A2F21CDB1D7E00409215 /* MJRefreshConst.m in Sources */,
+				4922F8D01CDB76AA00B48977 /* AnimationTabBarController.swift in Sources */,
 				49C0A2FD1CDB1D7E00409215 /* SDWebImageManager.m in Sources */,
 				49C0A2FE1CDB1D7E00409215 /* SDWebImagePrefetcher.m in Sources */,
 				8F377C8B1BEDEEC600B1C028 /* HomeTableViewController.swift in Sources */,
@@ -745,6 +758,7 @@
 				49C0A2E41CDB1D7E00409215 /* MJRefreshBackFooter.m in Sources */,
 				49C0A2FC1CDB1D7E00409215 /* SDWebImageDownloaderOperation.m in Sources */,
 				49C0A2EE1CDB1D7E00409215 /* MJRefreshGifHeader.m in Sources */,
+				4922F8D11CDB76AA00B48977 /* AnimationViewController.swift in Sources */,
 				49C0A2EB1CDB1D7E00409215 /* MJRefreshBackGifFooter.m in Sources */,
 				49C0A2F01CDB1D7E00409215 /* MJRefreshStateHeader.m in Sources */,
 				49C0A3181CDB2F4B00409215 /* BaseViewController.swift in Sources */,
@@ -752,6 +766,7 @@
 				8F9636061BEC801900616DA2 /* AppDelegate.swift in Sources */,
 				49C0A30D1CDB1DAD00409215 /* UIView+Extension.swift in Sources */,
 				49C0A2E91CDB1D7E00409215 /* MJRefreshAutoNormalFooter.m in Sources */,
+				4922F8CA1CDB767A00B48977 /* BaseNavigationController.swift in Sources */,
 				49C0A2E51CDB1D7E00409215 /* MJRefreshComponent.m in Sources */,
 				8F377C891BEDEE8A00B1C028 /* ProfileTableViewController.swift in Sources */,
 				8F377C851BEDEE6000B1C028 /* DiscoverTableViewController.swift in Sources */,
@@ -766,12 +781,13 @@
 				49C0A3141CDB25C200409215 /* UpImageDownTextButton.swift in Sources */,
 				49C0A2FB1CDB1D7E00409215 /* SDWebImageDownloader.m in Sources */,
 				49C0A3021CDB1D7E00409215 /* UIImage+WebP.m in Sources */,
+				4922F8D21CDB76AA00B48977 /* ShopCarRedDotView.swift in Sources */,
 				49C0A3011CDB1D7E00409215 /* UIImage+MultiFormat.m in Sources */,
+				4922F8CF1CDB76AA00B48977 /* MainViewController.swift in Sources */,
 				49C0A30C1CDB1DAD00409215 /* UIImage + Extension.swift in Sources */,
 				49C0A3221CDB533B00409215 /* HomeCell.swift in Sources */,
 				49C0A28F1CDB15A100409215 /* Theme.swift in Sources */,
 				49C0A30B1CDB1DAD00409215 /* UIDevice + Extension.swift in Sources */,
-				8F377C831BEDEE4500B1C028 /* MainViewController.swift in Sources */,
 				49C0A2E71CDB1D7E00409215 /* MJRefreshHeader.m in Sources */,
 				49C0A30A1CDB1DAD00409215 /* UIBarButtonItem+Extension.swift in Sources */,
 				49C0A2F91CDB1D7E00409215 /* SDWebImageCompat.m in Sources */,

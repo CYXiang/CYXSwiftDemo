@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UITabBarController {
+class MainViewController: AnimationTabBarController,UITabBarControllerDelegate {
     
     private var fristLoadMainTabBarController: Bool = true
     private var adImageView: UIImageView?
@@ -33,34 +33,50 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        delegate = self
 
-//        // 1.创建子控制器
-//        let homeVC = HomeTableViewController()
-//        homeVC.tabBarItem.image = UIImage(named: "tabbar_home")
-//        homeVC.title = "首页"
-//        homeVC.tabBarItem.selectedImage = UIImage(named: "tabbar_home_highlighted")
-//        // 2.包装一个导航控制器
-//        let nav = UINavigationController(rootViewController: homeVC)
+        buildMainTabBarChildViewController()
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if fristLoadMainTabBarController {
+            let containers = createViewContainers()
+            
+            createCustomIcons(containers)
+            fristLoadMainTabBarController = false
+        }
+    }
+    
+    // MARK: 初始化tabbar
+    private func buildMainTabBarChildViewController() {
+        tabBarControllerAddChildViewController(HomeTableViewController(), title: "首页", imageName: "tabbar_home", selectedImageName: "tabbar_home_highlighted", tag: 0)
+        tabBarControllerAddChildViewController(MessageTableViewController(), title: "闪电超市", imageName: "tabbar_category", selectedImageName: "tabbar_category_highlighted", tag: 1)
+        tabBarControllerAddChildViewController(DiscoverTableViewController(), title: "购物车", imageName: "tabbar_shoppingcart", selectedImageName: "tabbar_shoppingcart_highlighted", tag: 2)
+        tabBarControllerAddChildViewController(ProfileTableViewController(), title: "我的", imageName: "tabbar_mine", selectedImageName: "tabbar_mine_highlighted", tag: 3)
+    }
+    
+    private func tabBarControllerAddChildViewController(childView: UIViewController, title: String, imageName: String, selectedImageName: String, tag: Int) {
+        let vcItem = RAMAnimatedTabBarItem(title: title, image: UIImage(named: imageName), selectedImage: UIImage(named: selectedImageName))
+        vcItem.tag = tag
+        vcItem.animation = RAMBounceAnimation()
+        childView.tabBarItem = vcItem
+        childView.title = title
+        let navigationVC = BaseNavigationController(rootViewController:childView)
+        addChildViewController(navigationVC)
+    }
+
+    
+//    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+//        let childArr = tabBarController.childViewControllers as NSArray
+//        let index = childArr.indexOfObject(viewController)
 //        
-//        // 3.将导航控制器添加到UITabBarController
-//        addChildViewController(nav)
-        
-        addChildViewController(HomeTableViewController(), imageName: "tabbar_home", title: "首页")
-        addChildViewController(MessageTableViewController(), imageName: "tabbar_category", title: "分类")
-        addChildViewController(DiscoverTableViewController(), imageName: "tabbar_shoppingcart", title: "购物车")
-        addChildViewController(ProfileTableViewController(), imageName: "tabbar_mine", title: "个人中心")
-    }
-
-
-    func addChildViewController(childController: UIViewController ,imageName:String, title:String) {
-
-        childController.tabBarItem.image = UIImage(named:imageName)
-        childController.title = title
-        childController.tabBarItem.selectedImage = UIImage(named: imageName + "_highlighted")
-        // 2.包装一个导航控制器
-        let nav1 = UINavigationController(rootViewController: childController)
-        
-        // 3.将导航控制器添加到UITabBarController
-        addChildViewController(nav1)
-    }
+//        if index == 2 {
+//            return false
+//        }
+//        
+//        return true
+//    }
 }
