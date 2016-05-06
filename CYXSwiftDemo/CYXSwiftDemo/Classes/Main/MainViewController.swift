@@ -50,10 +50,13 @@ class MainViewController: AnimationTabBarController,UITabBarControllerDelegate {
         }
     }
     
+    // MARK: 统一设置Item文字属性
+
+    
     // MARK: 初始化tabbar
     private func buildMainTabBarChildViewController() {
         tabBarControllerAddChildViewController(HomeTableViewController(), title: "首页", imageName: "tabbar_home", selectedImageName: "tabbar_home_highlighted", tag: 0)
-        tabBarControllerAddChildViewController(MessageTableViewController(), title: "闪电超市", imageName: "tabbar_category", selectedImageName: "tabbar_category_highlighted", tag: 1)
+        tabBarControllerAddChildViewController(MessageTableViewController(), title: "分类", imageName: "tabbar_category", selectedImageName: "tabbar_category_highlighted", tag: 1)
         tabBarControllerAddChildViewController(DiscoverTableViewController(), title: "购物车", imageName: "tabbar_shoppingcart", selectedImageName: "tabbar_shoppingcart_highlighted", tag: 2)
         tabBarControllerAddChildViewController(ProfileTableViewController(), title: "我的", imageName: "tabbar_mine", selectedImageName: "tabbar_mine_highlighted", tag: 3)
     }
@@ -69,14 +72,14 @@ class MainViewController: AnimationTabBarController,UITabBarControllerDelegate {
     }
 
     
-//    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
-//        let childArr = tabBarController.childViewControllers as NSArray
-//        let index = childArr.indexOfObject(viewController)
-//        
-//        if index == 2 {
-//            return false
-//        }
-//        
-//        return true
-//    }
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        let childArr = tabBarController.childViewControllers as NSArray
+        let index = childArr.indexOfObject(viewController)
+        
+        if index == 2 {
+            return false
+        }
+        
+        return true
+    }
 }

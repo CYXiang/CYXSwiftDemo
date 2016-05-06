@@ -72,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if isNewVersion() {
             window?.rootViewController = GuideViewController()
-            NSUserDefaults.standardUserDefaults().setObject("isFristOpenApp", forKey: "isFristOpenApp")
+
         }else{
             loadADRootViewController()
         }
@@ -94,7 +94,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: 主题设置
     private func setAppSubject() {
         UITabBar.appearance().tintColor = UIColor.blackColor()
-
         let tabBarAppearance = UITabBar .appearance()
         tabBarAppearance.backgroundColor = UIColor.whiteColor()
         
@@ -141,11 +140,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  print(__LINE__)     // 打印所在的行
  print(__FILE__)     // 打印所在文件的路径
  */
-func CYXLog<T>(message : T, method :String = __FUNCTION__, line : Int = __LINE__){
+func CYXLog<T>(message : T, method :String = #function, line : Int = #line){
 
-    #if DEBUG
+//    #if DEBUG
     print("\(method)[\(line)]:\(message)")
-    #endif
+//    #endif
     
 }
 

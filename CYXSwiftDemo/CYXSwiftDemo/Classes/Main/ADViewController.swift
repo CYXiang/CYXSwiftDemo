@@ -36,7 +36,7 @@ class ADViewController: UIViewController {
                     NSNotificationCenter.defaultCenter().postNotificationName(ADImageLoadFail, object: nil)
                 }
                 if image != nil {
-                    let time = dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC)))
+                    let time = dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC)))
                     
                     dispatch_after(time, dispatch_get_main_queue(), { 
                         NSNotificationCenter.defaultCenter().postNotificationName(ADImageLoadSecussed, object: image)

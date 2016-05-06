@@ -63,7 +63,7 @@ class ShopCarRedDotView: UIView {
     }
     
     func addProductToRedDotView(animation: Bool) {
-        buyNumber++
+        buyNumber += 1
         
         if animation {
             reddotAnimation()
@@ -72,7 +72,7 @@ class ShopCarRedDotView: UIView {
     
     func reduceProductToRedDotView(animation: Bool) {
         if buyNumber > 0 {
-            buyNumber--
+            buyNumber -= 1
         }
         
         if animation {

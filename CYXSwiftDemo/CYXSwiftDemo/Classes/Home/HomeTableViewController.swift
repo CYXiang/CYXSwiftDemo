@@ -8,18 +8,41 @@
 
 import UIKit
 
-class HomeTableViewController: UIViewController {
+class HomeTableViewController: SelectedAressViewController {
 
     private var flag: Int = -1
     private var collectionView: UICollectionView!
     private var lastContentOffsetY: CGFloat = 0
     private var isAnimation: Bool = false
-    private var freshHot: NSObject?
 
     // MARK: Life circle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addHomeNotification()
+        setUpCollectionView()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.barTintColor = LFBNavigationYellowColor;
+        
+    }
+
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    // MARK: - addNotifiation
+    func addHomeNotification() {
+
+    
+    }
+    
+    // MARK: - Creat UI 
+    private func setUpCollectionView(){
+    
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 5
         layout.minimumLineSpacing = 8
@@ -36,51 +59,21 @@ class HomeTableViewController: UIViewController {
         let refreshHeadView = LFBRefreshHeader(refreshingTarget: self, refreshingAction: #selector(HomeTableViewController.headRefresh))
         refreshHeadView.gifView?.frame = CGRectMake(0, 30, 100, 100)
         collectionView.mj_header = refreshHeadView
-        
-        
     }
     
-    override func viewWillAppear(animated: Bool) {
-        navigationController?.navigationBar.barTintColor = LFBNavigationYellowColor;
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     
     // MARK: 刷新
     func headRefresh() {
-        freshHot = nil
-//        var headDataLoadFinish = false
-//        var freshHotLoadFinish = false
         
         weak var tmpSelf = self
         let time = dispatch_time(DISPATCH_TIME_NOW, Int64(0.8 * Double(NSEC_PER_SEC)))
         dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
-//            HeadResources.loadHomeHeadData { (data, error) -> Void in
-//                if error == nil {
-//                    headDataLoadFinish = true
-//                    tmpSelf?.headView?.headData = data
-//                    tmpSelf?.headData = data
-//                    if headDataLoadFinish && freshHotLoadFinish {
-//                        tmpSelf?.collectionView.reloadData()
-                        tmpSelf?.collectionView.mj_header.endRefreshing()
-//                    }
-//                }
-            }
-            
-//            FreshHot.loadFreshHotData { (data, error) -> Void in
-//                freshHotLoadFinish = true
-//                tmpSelf?.freshHot = data
-//                if headDataLoadFinish && freshHotLoadFinish {
-//                    tmpSelf?.collectionView.reloadData()
-                    tmpSelf?.collectionView.mj_header.endRefreshing()
-//                }
-//            }
+            tmpSelf?.collectionView.mj_header.endRefreshing()
         }
+        
     }
+}
     
 
 
@@ -126,7 +119,7 @@ extension HomeTableViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, atIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 1 && freshHot != nil && isAnimation {
+        if indexPath.section == 1 && isAnimation {
             startAnimation(view, offsetY: 60, duration: 0.8)
         }
     }
@@ -151,24 +144,25 @@ extension HomeTableViewController: UICollectionViewDataSource, UICollectionViewD
             view.transform = CGAffineTransformIdentity
         })
     }
-    
-    // MARK: - ScrollViewDelegate
-    func scrollViewDidScroll(scrollView: UIScrollView) {
 
-        
-        
-        if scrollView.contentOffset.y <= scrollView.contentSize.height {
-            isAnimation = lastContentOffsetY < scrollView.contentOffset.y
-            lastContentOffsetY = scrollView.contentOffset.y
-        }
-    }
 
+    // MARK: - CollectionView delegate
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 {
             CYXLog("点击了第一组")
         } else {
             CYXLog("点击了第二组")
+        }
+    }
+    
+    
+    // MARK: - ScrollViewDelegate
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        if scrollView.contentOffset.y <= scrollView.contentSize.height {
+            isAnimation = lastContentOffsetY < scrollView.contentOffset.y
+            lastContentOffsetY = scrollView.contentOffset.y
         }
     }
 }

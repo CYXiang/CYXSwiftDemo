@@ -22,7 +22,7 @@ class BaseNavigationController: UINavigationController {
         let backBtn = UIButton(type: UIButtonType.Custom)
         backBtn.setImage(UIImage(named: "v2_goback"), forState: .Normal)
         backBtn.titleLabel?.hidden = true
-        backBtn.addTarget(self, action: "backBtnClick", forControlEvents: .TouchUpInside)
+        backBtn.addTarget(self, action: #selector(BaseNavigationController.backBtnClick), forControlEvents: .TouchUpInside)
         backBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         backBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0)
         let btnW: CGFloat = ScreenWidth > 375.0 ? 50 : 44
