@@ -33,6 +33,11 @@ class HomeTableViewController: UIViewController {
         collectionView.registerClass(HomeCell.self, forCellWithReuseIdentifier: "Cell")
         view.addSubview(collectionView)
         
+        let refreshHeadView = LFBRefreshHeader(refreshingTarget: self, refreshingAction: #selector(HomeTableViewController.headRefresh))
+        refreshHeadView.gifView?.frame = CGRectMake(0, 30, 100, 100)
+        collectionView.mj_header = refreshHeadView
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -44,10 +49,43 @@ class HomeTableViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: 刷新
+    func headRefresh() {
+        freshHot = nil
+//        var headDataLoadFinish = false
+//        var freshHotLoadFinish = false
+        
+        weak var tmpSelf = self
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(0.8 * Double(NSEC_PER_SEC)))
+        dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+//            HeadResources.loadHomeHeadData { (data, error) -> Void in
+//                if error == nil {
+//                    headDataLoadFinish = true
+//                    tmpSelf?.headView?.headData = data
+//                    tmpSelf?.headData = data
+//                    if headDataLoadFinish && freshHotLoadFinish {
+//                        tmpSelf?.collectionView.reloadData()
+                        tmpSelf?.collectionView.mj_header.endRefreshing()
+//                    }
+//                }
+            }
+            
+//            FreshHot.loadFreshHotData { (data, error) -> Void in
+//                freshHotLoadFinish = true
+//                tmpSelf?.freshHot = data
+//                if headDataLoadFinish && freshHotLoadFinish {
+//                    tmpSelf?.collectionView.reloadData()
+                    tmpSelf?.collectionView.mj_header.endRefreshing()
+//                }
+//            }
+        }
+    }
+    
 
 
 
-}
+
 
 // MARK: - CollectionView data source
 

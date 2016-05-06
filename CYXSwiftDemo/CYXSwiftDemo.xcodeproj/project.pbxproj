@@ -12,6 +12,7 @@
 		4922F8D01CDB76AA00B48977 /* AnimationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F8CC1CDB76AA00B48977 /* AnimationTabBarController.swift */; };
 		4922F8D11CDB76AA00B48977 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F8CD1CDB76AA00B48977 /* AnimationViewController.swift */; };
 		4922F8D21CDB76AA00B48977 /* ShopCarRedDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F8CE1CDB76AA00B48977 /* ShopCarRedDotView.swift */; };
+		4922F8D51CDB7B4000B48977 /* LFBRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F8D41CDB7B4000B48977 /* LFBRefreshHeader.swift */; };
 		49C0A2841CDB121200409215 /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A2831CDB121200409215 /* ADViewController.swift */; };
 		49C0A2871CDB12A600409215 /* MainAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A2861CDB12A600409215 /* MainAD.swift */; };
 		49C0A28C1CDB131000409215 /* SwiftDictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A28B1CDB131000409215 /* SwiftDictModel.swift */; };
@@ -97,6 +98,7 @@
 		4922F8CC1CDB76AA00B48977 /* AnimationTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationTabBarController.swift; sourceTree = "<group>"; };
 		4922F8CD1CDB76AA00B48977 /* AnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		4922F8CE1CDB76AA00B48977 /* ShopCarRedDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCarRedDotView.swift; sourceTree = "<group>"; };
+		4922F8D41CDB7B4000B48977 /* LFBRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFBRefreshHeader.swift; sourceTree = "<group>"; };
 		49C0A2831CDB121200409215 /* ADViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADViewController.swift; sourceTree = "<group>"; };
 		49C0A2861CDB12A600409215 /* MainAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAD.swift; sourceTree = "<group>"; };
 		49C0A28B1CDB131000409215 /* SwiftDictModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDictModel.swift; sourceTree = "<group>"; };
@@ -230,6 +232,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4922F8D31CDB7B2600B48977 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				4922F8D41CDB7B4000B48977 /* LFBRefreshHeader.swift */,
+			);
+			name = Refresh;
+			sourceTree = "<group>";
+		};
 		49C0A2821CDB11C700409215 /* AD */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +268,7 @@
 		49C0A28D1CDB15A100409215 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				4922F8D31CDB7B2600B48977 /* Refresh */,
 				49C0A3121CDB25B200409215 /* Common */,
 				49C0A2901CDB15D800409215 /* Extension */,
 				49C0A28E1CDB15A100409215 /* Theme.swift */,
@@ -756,6 +767,7 @@
 				49C0A2F41CDB1D7E00409215 /* UIScrollView+MJRefresh.m in Sources */,
 				49C0A3051CDB1D7E00409215 /* UIView+WebCacheOperation.m in Sources */,
 				49C0A2E41CDB1D7E00409215 /* MJRefreshBackFooter.m in Sources */,
+				4922F8D51CDB7B4000B48977 /* LFBRefreshHeader.swift in Sources */,
 				49C0A2FC1CDB1D7E00409215 /* SDWebImageDownloaderOperation.m in Sources */,
 				49C0A2EE1CDB1D7E00409215 /* MJRefreshGifHeader.m in Sources */,
 				4922F8D11CDB76AA00B48977 /* AnimationViewController.swift in Sources */,
