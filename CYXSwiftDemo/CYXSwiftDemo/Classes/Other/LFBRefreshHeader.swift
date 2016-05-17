@@ -21,6 +21,6 @@ class LFBRefreshHeader: MJRefreshGifHeader {
         
         setTitle("下拉刷新", forState: .Idle)
         setTitle("松手开始刷新", forState: .Pulling)
-        setTitle("正在刷新", forState: .Refreshing)
+        setTitle("正在刷新...", forState: .Refreshing)
     }
 }

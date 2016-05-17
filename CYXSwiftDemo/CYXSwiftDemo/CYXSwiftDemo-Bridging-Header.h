@@ -6,7 +6,7 @@
 //  Copyright © 2016年 cyx. All rights reserved.
 //
 
+//#import "AFNetWorking.h"
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
 #import <CoreLocation/CoreLocation.h>
-//#import "SVProgressHUD.h"

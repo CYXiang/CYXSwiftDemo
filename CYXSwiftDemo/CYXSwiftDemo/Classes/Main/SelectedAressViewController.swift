@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SelectedAressViewController: AnimationViewController {
 
@@ -33,8 +34,9 @@ class SelectedAressViewController: AnimationViewController {
     // MARK: - Action
     // MARK: 扫一扫
     func leftItemClick() {
-    
-    
+         SVProgressHUD.showSuccessWithStatus("扫描成功")
+        
+        
     }
     //
     func rightItemClick() {
