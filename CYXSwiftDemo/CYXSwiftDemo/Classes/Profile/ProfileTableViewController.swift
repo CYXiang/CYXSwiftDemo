@@ -10,13 +10,30 @@ import UIKit
 
 class ProfileTableViewController: BaseViewController {
 
+    
+    // MARK: - Lief Cycle
+    override func loadView() {
+        super.loadView()
+        self.navigationController?.navigationBar.hidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        buildUI()
+    }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    // MARK: - CreatUI
+    private func buildUI(){
+    
         
         
     }
-
 
 
 }

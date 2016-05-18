@@ -56,6 +56,12 @@ class HomeCell: UICollectionViewCell {
         return specificsLabel
     }()
     
+    private var discountPriceView: DiscountPriceView?
+    
+    private lazy var buyView: BuyView = {
+        let buyView = BuyView()
+        return buyView
+    }()
     
     private var type: HomeCellTyep? {
         didSet {
@@ -65,6 +71,8 @@ class HomeCell: UICollectionViewCell {
             fineImageView.hidden = (type == HomeCellTyep.Horizontal)
             giveImageView.hidden = (type == HomeCellTyep.Horizontal)
             specificsLabel.hidden = (type == HomeCellTyep.Horizontal)
+            discountPriceView?.hidden = (type == HomeCellTyep.Horizontal)
+
         }
     }
     
@@ -84,6 +92,35 @@ class HomeCell: UICollectionViewCell {
     }
     
     // MARK: - 模型set方法
+    var activities: Activities? {
+        didSet {
+            self.type = .Horizontal
+            backImageView.sd_setImageWithURL(NSURL(string: activities!.img!), placeholderImage: UIImage(named: "v2_placeholder_full_size"))
+        }
+    }
+    
+    
+    var goods: Goods? {
+        didSet {
+            self.type = .Vertical
+            goodsImageView.sd_setImageWithURL(NSURL(string: goods!.img!), placeholderImage: UIImage(named: "v2_placeholder_square"))
+            nameLabel.text = goods?.name
+            if goods!.pm_desc == "买一赠一" {
+                giveImageView.hidden = false
+            } else {
+                
+                giveImageView.hidden = true
+            }
+            if discountPriceView != nil {
+                discountPriceView!.removeFromSuperview()
+            }
+            discountPriceView = DiscountPriceView(price: goods?.price, marketPrice: goods?.market_price)
+            addSubview(discountPriceView!)
+            
+            specificsLabel.text = goods?.specifics
+            buyView.goods = goods
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

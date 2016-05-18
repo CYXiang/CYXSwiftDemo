@@ -52,7 +52,8 @@ public let BlogURLString: String = "http://www.jianshu.com/users/5fe7513c7a57/la
 
 // MARK: - 常用颜色
 public let LFBGlobalBackgroundColor = UIColor.colorWithCustom(239, g: 239, b: 239)
-public let LFBNavigationYellowColor = UIColor.colorWithCustom(253, g: 212, b: 49)
+//public let LFBNavigationYellowColor = UIColor.colorWithCustom(253, g: 212, b: 49)
+public let LFBNavigationYellowColor = UIColor.colorWithCustom(0, g: 160, b: 255)
 public let LFBTextGreyColol = UIColor.colorWithCustom(130, g: 130, b: 130)
 public let LFBTextBlackColor = UIColor.colorWithCustom(50, g: 50, b: 50)
 

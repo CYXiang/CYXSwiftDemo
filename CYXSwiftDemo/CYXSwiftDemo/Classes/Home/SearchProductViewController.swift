@@ -20,7 +20,7 @@ class SearchProductViewController: AnimationViewController {
     private var yellowShopCar: YellowShopCarView?
     private var collectionHeadView: NotSearchProductsView?
 
-    
+    // MARK: - Lief Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +34,16 @@ class SearchProductViewController: AnimationViewController {
         
         loadHistorySearchButtonData()
         
-
+        setUpSearchCollectionView()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigationController?.navigationBar.barTintColor = LFBNavigationBarWhiteBackgroundColor
+        if searchCollectionView != nil && goodses?.count > 0 {
+            searchCollectionView!.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +52,7 @@ class SearchProductViewController: AnimationViewController {
     }
     
 
-    // MARK: Creat UI 
+    // MARK: - Creat UI
     
     private func setUpContentScrollView() {
         contentScrollView.backgroundColor = view.backgroundColor
@@ -153,6 +162,27 @@ class SearchProductViewController: AnimationViewController {
         }
         cleanHistoryButton.hidden = hidden
     }
+    
+    private func setUpSearchCollectionView() {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 8
+        layout.sectionInset = UIEdgeInsets(top: 0, left: HomeCollectionViewCellMargin, bottom: 0, right: HomeCollectionViewCellMargin)
+        layout.headerReferenceSize = CGSizeMake(0, HomeCollectionViewCellMargin)
+        
+        searchCollectionView = LFBCollectionView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight - 64), collectionViewLayout: layout)
+        searchCollectionView!.delegate = self
+        searchCollectionView!.dataSource = self
+        searchCollectionView!.backgroundColor = LFBGlobalBackgroundColor
+        searchCollectionView!.registerClass(HomeCell.self, forCellWithReuseIdentifier: "Cell")
+        searchCollectionView?.hidden = true
+        collectionHeadView = NotSearchProductsView(frame: CGRectMake(0, -80, ScreenWidth, 80))
+        searchCollectionView?.addSubview(collectionHeadView!)
+        searchCollectionView?.contentInset = UIEdgeInsetsMake(80, 0, 30, 0)
+        searchCollectionView?.registerClass(HomeCollectionFooterView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "footerView")
+        view.addSubview(searchCollectionView!)
+    }
 
     
     // MARK: - Action
@@ -178,8 +208,24 @@ class SearchProductViewController: AnimationViewController {
         }
         
         ProgressHUDManager.setBackgroundColor(UIColor.whiteColor())
-//        ProgressHUDManager.showSuccessWithStatus("加载成功")
-
+        ProgressHUDManager.showWithStatus("正在全力加载")
+        
+        weak var weakSelf = self
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC)))
+        
+        dispatch_after(time, dispatch_get_main_queue()) { 
+            SearchProducts.loadSearchData({ (data, error) in
+                if data?.data?.count > 0{
+                    weakSelf?.goodses = data!.data!
+                    weakSelf?.searchCollectionView?.hidden = false
+                    weakSelf?.yellowShopCar?.hidden = false
+                    weakSelf?.searchCollectionView?.reloadData()
+                    weakSelf?.collectionHeadView?.setSearchProductLabelText(keyWord!)
+                    weakSelf?.searchCollectionView?.setContentOffset(CGPointMake(0, -80), animated: false)
+                    ProgressHUDManager.dismiss()
+                }
+            })
+        }
         
     }
     
@@ -197,7 +243,7 @@ class SearchProductViewController: AnimationViewController {
 
 }
 
-
+// MARK: - UISearchBarDelegate, UIScrollViewDelegate
 extension SearchProductViewController: UISearchBarDelegate, UIScrollViewDelegate {
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -223,3 +269,65 @@ extension SearchProductViewController: UISearchBarDelegate, UIScrollViewDelegate
         }
     }
 }
+
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
+extension SearchProductViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return goodses?.count ?? 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! HomeCell
+        cell.goods = goodses![indexPath.row]
+        weak var weakSelf = self
+        cell.addButtonClick = ({ (imageView) -> () in
+            weakSelf?.addProductsToBigShopCarAnimation(imageView)
+        })
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        let itemSize = CGSizeMake((ScreenWidth - HomeCollectionViewCellMargin * 2) * 0.5 - 4, 250)
+        
+        return itemSize
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        
+        if goodses?.count <= 0 || goodses == nil {
+            return CGSizeZero
+        }
+        
+        return CGSizeMake(ScreenWidth, 30)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        return CGSizeZero
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        if kind == UICollectionElementKindSectionFooter {
+            let footerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionFooter, withReuseIdentifier: "footerView", forIndexPath: indexPath) as! HomeCollectionFooterView
+            
+            footerView.setFooterTitle("无更多商品", textColor: UIColor.colorWithCustom(50, g: 50, b: 50))
+            
+            return footerView
+            
+        } else {
+            return collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionFooter, withReuseIdentifier: "footerView", forIndexPath: indexPath)
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let productDetailVC = ProductDetailViewController(goods: goodses![indexPath.row])
+        navigationController?.pushViewController(productDetailVC, animated: true)
+    }
+
+}
+
+
+

@@ -22,6 +22,15 @@
 		4922F8D11CDB76AA00B48977 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F8CD1CDB76AA00B48977 /* AnimationViewController.swift */; };
 		4922F8D21CDB76AA00B48977 /* ShopCarRedDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F8CE1CDB76AA00B48977 /* ShopCarRedDotView.swift */; };
 		4922F8D51CDB7B4000B48977 /* LFBRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922F8D41CDB7B4000B48977 /* LFBRefreshHeader.swift */; };
+		4973E56C1CEC0D560018B73B /* 促销 in Resources */ = {isa = PBXBuildFile; fileRef = 4973E56B1CEC0D560018B73B /* 促销 */; };
+		4973E5711CEC15AA0018B73B /* DiscountPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973E5701CEC15AA0018B73B /* DiscountPriceView.swift */; };
+		4973E5731CEC16050018B73B /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973E5721CEC16050018B73B /* BuyView.swift */; };
+		4973E5771CEC17D40018B73B /* HeadResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973E5761CEC17D40018B73B /* HeadResources.swift */; };
+		4973E5791CEC184D0018B73B /* UserShopCarTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973E5781CEC184D0018B73B /* UserShopCarTool.swift */; };
+		4973E57B1CEC188B0018B73B /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973E57A1CEC188B0018B73B /* String + Extension.swift */; };
+		4973E57D1CEC1BC00018B73B /* HomeCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973E57C1CEC1BC00018B73B /* HomeCollectionFooterView.swift */; };
+		4973E57F1CEC1BF10018B73B /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973E57E1CEC1BF10018B73B /* ProductDetailViewController.swift */; };
+		4973E5811CEC1C180018B73B /* LFBActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973E5801CEC1C180018B73B /* LFBActionSheet.swift */; };
 		49C0A2841CDB121200409215 /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A2831CDB121200409215 /* ADViewController.swift */; };
 		49C0A2871CDB12A600409215 /* MainAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A2861CDB12A600409215 /* MainAD.swift */; };
 		49C0A28C1CDB131000409215 /* SwiftDictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A28B1CDB131000409215 /* SwiftDictModel.swift */; };
@@ -106,7 +115,7 @@
 		4914B2E61CE0308400CA967C /* SearchProduct */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SearchProduct; sourceTree = "<group>"; };
 		4914B2E81CE039FE00CA967C /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		4914B2EA1CE03CB800CA967C /* ProgressHUDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUDManager.swift; sourceTree = "<group>"; };
-		4914B2EC1CE03D2C00CA967C /* SearchProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchProducts.swift; sourceTree = "<group>"; };
+		4914B2EC1CE03D2C00CA967C /* SearchProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchProducts.swift; path = ../Home/SearchProducts.swift; sourceTree = "<group>"; };
 		4914B2EE1CE0588E00CA967C /* LFBCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFBCollectionView.swift; sourceTree = "<group>"; };
 		4914B2F11CE058E400CA967C /* FreshHot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreshHot.swift; sourceTree = "<group>"; };
 		4914B2F31CE0593B00CA967C /* YellowShopCarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowShopCarView.swift; sourceTree = "<group>"; };
@@ -117,6 +126,15 @@
 		4922F8CD1CDB76AA00B48977 /* AnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		4922F8CE1CDB76AA00B48977 /* ShopCarRedDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCarRedDotView.swift; sourceTree = "<group>"; };
 		4922F8D41CDB7B4000B48977 /* LFBRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFBRefreshHeader.swift; sourceTree = "<group>"; };
+		4973E56B1CEC0D560018B73B /* 促销 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "促销"; sourceTree = "<group>"; };
+		4973E5701CEC15AA0018B73B /* DiscountPriceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscountPriceView.swift; sourceTree = "<group>"; };
+		4973E5721CEC16050018B73B /* BuyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
+		4973E5761CEC17D40018B73B /* HeadResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadResources.swift; sourceTree = "<group>"; };
+		4973E5781CEC184D0018B73B /* UserShopCarTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserShopCarTool.swift; sourceTree = "<group>"; };
+		4973E57A1CEC188B0018B73B /* String + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		4973E57C1CEC1BC00018B73B /* HomeCollectionFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionFooterView.swift; sourceTree = "<group>"; };
+		4973E57E1CEC1BF10018B73B /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		4973E5801CEC1C180018B73B /* LFBActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFBActionSheet.swift; sourceTree = "<group>"; };
 		49C0A2831CDB121200409215 /* ADViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADViewController.swift; sourceTree = "<group>"; };
 		49C0A2861CDB12A600409215 /* MainAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAD.swift; sourceTree = "<group>"; };
 		49C0A28B1CDB131000409215 /* SwiftDictModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDictModel.swift; sourceTree = "<group>"; };
@@ -256,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				4914B2F11CE058E400CA967C /* FreshHot.swift */,
+				4973E5761CEC17D40018B73B /* HeadResources.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -266,6 +285,16 @@
 				4922F8D41CDB7B4000B48977 /* LFBRefreshHeader.swift */,
 			);
 			name = Refresh;
+			sourceTree = "<group>";
+		};
+		4973E56D1CEC0D760018B73B /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4914B2F31CE0593B00CA967C /* YellowShopCarView.swift */,
+				4914B2F51CE0596B00CA967C /* NotSearchProductsView.swift */,
+				4914B2EC1CE03D2C00CA967C /* SearchProducts.swift */,
+			);
+			name = SearchViewController;
 			sourceTree = "<group>";
 		};
 		49C0A2821CDB11C700409215 /* AD */ = {
@@ -290,6 +319,7 @@
 			children = (
 				49C0A28B1CDB131000409215 /* SwiftDictModel.swift */,
 				4914B2EA1CE03CB800CA967C /* ProgressHUDManager.swift */,
+				4973E5781CEC184D0018B73B /* UserShopCarTool.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -312,6 +342,7 @@
 				49C0A3061CDB1DAD00409215 /* UIBarButtonItem+Extension.swift */,
 				49C0A3071CDB1DAD00409215 /* UIDevice + Extension.swift */,
 				49C0A3081CDB1DAD00409215 /* UIImage + Extension.swift */,
+				4973E57A1CEC188B0018B73B /* String + Extension.swift */,
 				49C0A3091CDB1DAD00409215 /* UIView+Extension.swift */,
 			);
 			name = Extension;
@@ -322,6 +353,7 @@
 			children = (
 				4914B2E61CE0308400CA967C /* SearchProduct */,
 				49C0A31B1CDB319900409215 /* AD */,
+				4973E56B1CEC0D560018B73B /* 促销 */,
 				49C0A2941CDB1D7E00409215 /* MJRefresh */,
 				49C0A2C11CDB1D7E00409215 /* SDWebImage */,
 			);
@@ -465,12 +497,14 @@
 		49C0A3121CDB25B200409215 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				4914B2F51CE0596B00CA967C /* NotSearchProductsView.swift */,
-				4914B2F31CE0593B00CA967C /* YellowShopCarView.swift */,
-				49C0A3171CDB2F4B00409215 /* BaseViewController.swift */,
 				4922F8C91CDB767A00B48977 /* BaseNavigationController.swift */,
+				49C0A3171CDB2F4B00409215 /* BaseViewController.swift */,
+				4973E5721CEC16050018B73B /* BuyView.swift */,
+				4973E56D1CEC0D760018B73B /* SearchViewController */,
 				49C0A3131CDB25C200409215 /* UpImageDownTextButton.swift */,
 				4914B2EE1CE0588E00CA967C /* LFBCollectionView.swift */,
+				4973E5801CEC1C180018B73B /* LFBActionSheet.swift */,
+				4973E5701CEC15AA0018B73B /* DiscountPriceView.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -531,8 +565,9 @@
 				49C0A3211CDB533B00409215 /* HomeCell.swift */,
 				49C0A3231CDB535100409215 /* HomeCell.xib */,
 				4914B2E81CE039FE00CA967C /* SearchView.swift */,
+				4973E57C1CEC1BC00018B73B /* HomeCollectionFooterView.swift */,
 				49FEC0011CDC9C0C002C1253 /* SearchProductViewController.swift */,
-				4914B2EC1CE03D2C00CA967C /* SearchProducts.swift */,
+				4973E57E1CEC1BF10018B73B /* ProductDetailViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -731,6 +766,7 @@
 				49C0A2F11CDB1D7E00409215 /* MJRefresh.bundle in Resources */,
 				49C0A31C1CDB319900409215 /* AD in Resources */,
 				49C0A3241CDB535100409215 /* HomeCell.xib in Resources */,
+				4973E56C1CEC0D560018B73B /* 促销 in Resources */,
 				8F96360D1BEC801900616DA2 /* Assets.xcassets in Resources */,
 				4914B2E71CE0308400CA967C /* SearchProduct in Resources */,
 			);
@@ -809,12 +845,14 @@
 				49C0A2F21CDB1D7E00409215 /* MJRefreshConst.m in Sources */,
 				49FEC0001CDC76B3002C1253 /* SelectedAressViewController.swift in Sources */,
 				4922F8D01CDB76AA00B48977 /* AnimationTabBarController.swift in Sources */,
+				4973E57D1CEC1BC00018B73B /* HomeCollectionFooterView.swift in Sources */,
 				49C0A2FD1CDB1D7E00409215 /* SDWebImageManager.m in Sources */,
 				49C0A2FE1CDB1D7E00409215 /* SDWebImagePrefetcher.m in Sources */,
 				4914B2EB1CE03CB800CA967C /* ProgressHUDManager.swift in Sources */,
 				8F377C8B1BEDEEC600B1C028 /* HomeTableViewController.swift in Sources */,
 				49C0A2E81CDB1D7E00409215 /* MJRefreshAutoGifFooter.m in Sources */,
 				4914B2F41CE0593B00CA967C /* YellowShopCarView.swift in Sources */,
+				4973E57B1CEC188B0018B73B /* String + Extension.swift in Sources */,
 				49C0A2F41CDB1D7E00409215 /* UIScrollView+MJRefresh.m in Sources */,
 				49C0A3051CDB1D7E00409215 /* UIView+WebCacheOperation.m in Sources */,
 				49C0A2E41CDB1D7E00409215 /* MJRefreshBackFooter.m in Sources */,
@@ -826,6 +864,7 @@
 				4914B2EF1CE0588E00CA967C /* LFBCollectionView.swift in Sources */,
 				49C0A2F01CDB1D7E00409215 /* MJRefreshStateHeader.m in Sources */,
 				49C0A3181CDB2F4B00409215 /* BaseViewController.swift in Sources */,
+				4973E5711CEC15AA0018B73B /* DiscountPriceView.swift in Sources */,
 				49C0A2871CDB12A600409215 /* MainAD.swift in Sources */,
 				49FEC0021CDC9C0C002C1253 /* SearchProductViewController.swift in Sources */,
 				8F9636061BEC801900616DA2 /* AppDelegate.swift in Sources */,
@@ -838,15 +877,19 @@
 				8F377C851BEDEE6000B1C028 /* DiscoverTableViewController.swift in Sources */,
 				49C0A3001CDB1D7E00409215 /* UIImage+GIF.m in Sources */,
 				49C0A2F51CDB1D7E00409215 /* UIView+MJExtension.m in Sources */,
+				4973E5771CEC17D40018B73B /* HeadResources.swift in Sources */,
 				49C0A31A1CDB2F7000409215 /* GuideCell.swift in Sources */,
 				8F377C871BEDEE6F00B1C028 /* MessageTableViewController.swift in Sources */,
 				49C0A2841CDB121200409215 /* ADViewController.swift in Sources */,
 				49C0A3041CDB1D7E00409215 /* UIImageView+WebCache.m in Sources */,
 				49C0A2ED1CDB1D7E00409215 /* MJRefreshBackStateFooter.m in Sources */,
+				4973E5811CEC1C180018B73B /* LFBActionSheet.swift in Sources */,
 				49C0A2FF1CDB1D7E00409215 /* UIButton+WebCache.m in Sources */,
 				49C0A3141CDB25C200409215 /* UpImageDownTextButton.swift in Sources */,
 				49C0A2FB1CDB1D7E00409215 /* SDWebImageDownloader.m in Sources */,
 				49C0A3021CDB1D7E00409215 /* UIImage+WebP.m in Sources */,
+				4973E5731CEC16050018B73B /* BuyView.swift in Sources */,
+				4973E57F1CEC1BF10018B73B /* ProductDetailViewController.swift in Sources */,
 				4922F8D21CDB76AA00B48977 /* ShopCarRedDotView.swift in Sources */,
 				49C0A3011CDB1D7E00409215 /* UIImage+MultiFormat.m in Sources */,
 				4914B2F61CE0596B00CA967C /* NotSearchProductsView.swift in Sources */,
@@ -871,6 +914,7 @@
 				49C0A2E31CDB1D7E00409215 /* MJRefreshAutoFooter.m in Sources */,
 				49C0A2F71CDB1D7E00409215 /* NSData+ImageContentType.m in Sources */,
 				49C0A3031CDB1D7E00409215 /* UIImageView+HighlightedWebCache.m in Sources */,
+				4973E5791CEC184D0018B73B /* UserShopCarTool.swift in Sources */,
 				49C0A28C1CDB131000409215 /* SwiftDictModel.swift in Sources */,
 				49C0A2E61CDB1D7E00409215 /* MJRefreshFooter.m in Sources */,
 			);
