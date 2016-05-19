@@ -31,6 +31,7 @@
 		4973E57D1CEC1BC00018B73B /* HomeCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973E57C1CEC1BC00018B73B /* HomeCollectionFooterView.swift */; };
 		4973E57F1CEC1BF10018B73B /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973E57E1CEC1BF10018B73B /* ProductDetailViewController.swift */; };
 		4973E5811CEC1C180018B73B /* LFBActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973E5801CEC1C180018B73B /* LFBActionSheet.swift */; };
+		4973E5871CEC66CB0018B73B /* MineHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973E5861CEC66CB0018B73B /* MineHeadView.swift */; };
 		49C0A2841CDB121200409215 /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A2831CDB121200409215 /* ADViewController.swift */; };
 		49C0A2871CDB12A600409215 /* MainAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A2861CDB12A600409215 /* MainAD.swift */; };
 		49C0A28C1CDB131000409215 /* SwiftDictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A28B1CDB131000409215 /* SwiftDictModel.swift */; };
@@ -82,6 +83,7 @@
 		49C0A31C1CDB319900409215 /* AD in Resources */ = {isa = PBXBuildFile; fileRef = 49C0A31B1CDB319900409215 /* AD */; };
 		49C0A3221CDB533B00409215 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A3211CDB533B00409215 /* HomeCell.swift */; };
 		49C0A3241CDB535100409215 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C0A3231CDB535100409215 /* HomeCell.xib */; };
+		49F101501CEDA9B60000B3D9 /* CYXTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F1014F1CEDA9B60000B3D9 /* CYXTableView.swift */; };
 		49FEC0001CDC76B3002C1253 /* SelectedAressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEBFFF1CDC76B3002C1253 /* SelectedAressViewController.swift */; };
 		49FEC0021CDC9C0C002C1253 /* SearchProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEC0011CDC9C0C002C1253 /* SearchProductViewController.swift */; };
 		8F377C851BEDEE6000B1C028 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F377C841BEDEE6000B1C028 /* DiscoverTableViewController.swift */; };
@@ -135,6 +137,7 @@
 		4973E57C1CEC1BC00018B73B /* HomeCollectionFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionFooterView.swift; sourceTree = "<group>"; };
 		4973E57E1CEC1BF10018B73B /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		4973E5801CEC1C180018B73B /* LFBActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFBActionSheet.swift; sourceTree = "<group>"; };
+		4973E5861CEC66CB0018B73B /* MineHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineHeadView.swift; sourceTree = "<group>"; };
 		49C0A2831CDB121200409215 /* ADViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADViewController.swift; sourceTree = "<group>"; };
 		49C0A2861CDB12A600409215 /* MainAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAD.swift; sourceTree = "<group>"; };
 		49C0A28B1CDB131000409215 /* SwiftDictModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDictModel.swift; sourceTree = "<group>"; };
@@ -223,6 +226,7 @@
 		49C0A31B1CDB319900409215 /* AD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AD; sourceTree = "<group>"; };
 		49C0A3211CDB533B00409215 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		49C0A3231CDB535100409215 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		49F1014F1CEDA9B60000B3D9 /* CYXTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYXTableView.swift; sourceTree = "<group>"; };
 		49FEBFFF1CDC76B3002C1253 /* SelectedAressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedAressViewController.swift; sourceTree = "<group>"; };
 		49FEC0011CDC9C0C002C1253 /* SearchProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchProductViewController.swift; sourceTree = "<group>"; };
 		8F377C841BEDEE6000B1C028 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
@@ -505,6 +509,7 @@
 				4914B2EE1CE0588E00CA967C /* LFBCollectionView.swift */,
 				4973E5801CEC1C180018B73B /* LFBActionSheet.swift */,
 				4973E5701CEC15AA0018B73B /* DiscountPriceView.swift */,
+				49F1014F1CEDA9B60000B3D9 /* CYXTableView.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -598,6 +603,7 @@
 			isa = PBXGroup;
 			children = (
 				8F377C881BEDEE8A00B1C028 /* ProfileTableViewController.swift */,
+				4973E5861CEC66CB0018B73B /* MineHeadView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -883,6 +889,7 @@
 				49C0A2841CDB121200409215 /* ADViewController.swift in Sources */,
 				49C0A3041CDB1D7E00409215 /* UIImageView+WebCache.m in Sources */,
 				49C0A2ED1CDB1D7E00409215 /* MJRefreshBackStateFooter.m in Sources */,
+				49F101501CEDA9B60000B3D9 /* CYXTableView.swift in Sources */,
 				4973E5811CEC1C180018B73B /* LFBActionSheet.swift in Sources */,
 				49C0A2FF1CDB1D7E00409215 /* UIButton+WebCache.m in Sources */,
 				49C0A3141CDB25C200409215 /* UpImageDownTextButton.swift in Sources */,
@@ -903,6 +910,7 @@
 				4914B2F21CE058E400CA967C /* FreshHot.swift in Sources */,
 				49C0A30A1CDB1DAD00409215 /* UIBarButtonItem+Extension.swift in Sources */,
 				49C0A2F91CDB1D7E00409215 /* SDWebImageCompat.m in Sources */,
+				4973E5871CEC66CB0018B73B /* MineHeadView.swift in Sources */,
 				49C0A2EC1CDB1D7E00409215 /* MJRefreshBackNormalFooter.m in Sources */,
 				49C0A2FA1CDB1D7E00409215 /* SDWebImageDecoder.m in Sources */,
 				49C0A2F81CDB1D7E00409215 /* SDImageCache.m in Sources */,

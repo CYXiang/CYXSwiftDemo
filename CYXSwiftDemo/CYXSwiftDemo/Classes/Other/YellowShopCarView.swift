@@ -40,7 +40,7 @@ class YellowShopCarView: UIView {
     convenience init(frame: CGRect, shopViewClick:(() -> ())) {
         self.init(frame: frame)
 
-        let tap = UITapGestureRecognizer(target: self, action: "shopViewShowShopCar")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(YellowShopCarView.shopViewShowShopCar))
         addGestureRecognizer(tap)
         
         self.shopViewClick = shopViewClick
